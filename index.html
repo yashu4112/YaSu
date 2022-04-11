@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script>
+      barr = new Array("assests/1.jpg", "assests/2.jpg", "assests/3.jpg", "assests/4.jpg","assests/5.jpg","assests/6.jpg");
+      cnt = 0;
+      c = 0;
+      str = ''
+      function disp() {
+        if (document.images) {
+          cnt++;
+          if (cnt == barr.length) {
+            cnt = 0;
+          }
+          document.changeB.src = barr[cnt];
+          setTimeout("disp()", 2000);
+          showText()
+        }
+      }
+
+      function showText(){
+        if (str == 'HAPPY BIRTHDY YASU') {
+         str = ''
+        }
+        else if(str == 'HAPPY BIRTHDY'){
+          str = 'HAPPY BIRTHDY YASU'
+        }
+        else if(str == 'HAPPY'){
+          str = 'HAPPY BIRTHDY'
+        }
+        else if(str == ''){
+          str = 'HAPPY'
+        }
+        document.getElementById("txt").innerHTML = str
+      }
+      
+    </script>
+  </head>
+  <body style="color: grey;" onload="disp()">
+      <center> <img src="a2.jpg" width="400px" height="500px" name="changeB" style="margin-top: 20px; border: outset 10px rgb(75, 110, 233);" /> </center>
+      <center><p id="txt" style="font-size: 80px; font-family: algerian; color: rgb(141, 38, 210);"></p></center>
+  </body>
+</html>
